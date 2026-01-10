@@ -1,0 +1,1 @@
+Aqui ficam os componentes que representam as páginas completas da aplicação

@@ -1,0 +1,1 @@
+Pasta dedicada aos ficheiros de configuração de estilos globais e temas da aplicação

@@ -1,0 +1,1 @@
+Ficheiros nesta pasta são servidos exatamente como estão. Ideal para robots.txt, favicons e manifestos
