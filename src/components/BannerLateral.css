@@ -1,0 +1,46 @@
+.banner-roxo {
+  background: linear-gradient(135deg, #6c1199, #471cb4);
+  color: white;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.icon-raio {
+  font-size: 2rem;
+  background: #fff;
+  color: #6c1199;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.title-levelup {
+  font-size: 3rem;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  max-width: 300px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+}

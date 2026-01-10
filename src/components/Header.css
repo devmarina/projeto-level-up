@@ -12,11 +12,17 @@
 .logo-text {
   font-weight: 800;
   font-size: 24px;
-  background: linear-gradient(90deg, #471cb4,#5316a9, #6c1199, #a122e0); /* Gradiente */
-    -webkit-background-clip: text; /* Recorta o fundo no formato do texto */
-    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o fundo */
-    background-clip: text; /* Suporte para navegadores que usam padrão */
-    color: transparent; /* Garantia extra */
+  background: linear-gradient(
+    90deg,
+    #471cb4,
+    #5316a9,
+    #6c1199,
+    #a122e0
+  ); /* Gradiente */
+  -webkit-background-clip: text; /* Recorta o fundo no formato do texto */
+  -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o fundo */
+  background-clip: text; /* Suporte para navegadores que usam padrão */
+  color: transparent; /* Garantia extra */
 }
 
 .nav-links ul {
@@ -61,8 +67,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
 
 .user-name {
   font-size: 0.9rem;
