@@ -1,0 +1,85 @@
+/* src/components/Header.css */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 24px;
+  background: linear-gradient(90deg, #471cb4,#5316a9, #6c1199, #a122e0); /* Gradiente */
+    -webkit-background-clip: text; /* Recorta o fundo no formato do texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o fundo */
+    background-clip: text; /* Suporte para navegadores que usam padrão */
+    color: transparent; /* Garantia extra */
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+/* Estilo para quando a página está ativa (marcada) */
+.nav-links a.active {
+  color: #6c1199;
+  border-bottom: 2px solid #6c1199;
+  padding-bottom: 5px;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #20adcd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.user-name {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.exit-button {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.exit-button:hover {
+  color: #ff4d4d;
+}
