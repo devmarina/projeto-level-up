@@ -10,7 +10,7 @@ export default function Cadastro() {
 
       <div className="login-form-side">
         <h3>Crie sua conta</h3>
-        <p>Comece sua jornada gamificada hoje mesmo</p>
+        <p>Comece sua jornada hoje mesmo!</p>
 
         <form className="form">
           <label>Nome de Usuário</label>
