@@ -1,4 +1,3 @@
-// src/pages/Questionarios.jsx
 import { useNavigate } from "react-router-dom";
 import CardDisciplinaQuestionario from "../components/CardDisciplinaQuestionario";
 import "./Questionarios.css";

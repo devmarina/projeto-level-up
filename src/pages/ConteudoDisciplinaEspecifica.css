@@ -1,12 +1,9 @@
-/* src/pages/ConteudoDisciplinaEspecifica.css */
-
 .especifica-container {
   padding: 40px 50px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Botão Voltar */
 .btn-voltar-link {
   display: flex;
   align-items: center;
@@ -25,7 +22,6 @@
   font-size: 16px;
 }
 
-/* Container de Informações da Disciplina (Topo) */
 .info-main-container {
   background: white;
   border: 1px solid #e0e0e0;
@@ -74,10 +70,9 @@
 }
 
 .pct-text {
-  color: #20adcd; /* Azul do progresso */
+  color: #20adcd; 
 }
 
-/* Container de Unidades (Caixa Branca) */
 .unidades-white-box {
   background: white;
   border: 1px solid #e0e0e0;
@@ -98,10 +93,9 @@
   gap: 15px;
 }
 
-/* Grid Inferior de Recursos */
 .recursos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+  grid-template-columns: 1fr 1fr; 
   gap: 20px;
 }
 
@@ -125,7 +119,7 @@
 .recurso-icon-box {
   width: 48px;
   height: 48px;
-  background: #f3e8ff; /* Roxo bem clarinho */
+  background: #f3e8ff; 
   border-radius: 10px;
   display: flex;
   justify-content: center;

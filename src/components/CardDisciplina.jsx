@@ -1,4 +1,3 @@
-// src/components/CardDisciplina.jsx
 import "./CardDisciplina.css";
 import ProgressBar from "./ProgressBar";
 
@@ -6,7 +5,6 @@ export default function CardDisciplina({ id, nome, descricao, unidadesConcluidas
   return (
     <div className="disciplina-card" onClick={onClick}>
       <div className="card-header-top">
-        {/* Ícone em SVG para manter o padrão dos Questionários */}
         <div className="card-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>

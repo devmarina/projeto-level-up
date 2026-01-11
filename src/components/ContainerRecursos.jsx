@@ -1,4 +1,3 @@
-// src/components/ContainerRecursos.jsx
 import { useState } from "react";
 import TabMenu from "./TabMenu";
 import CardRecurso from "./CardRecurso";
@@ -17,7 +16,6 @@ export default function ContainerRecursos({ nomeUnidade, onClose }) {
       <TabMenu activeTab={activeTab} onTabChange={setActiveTab} />
 
       <div className="recursos-scroll-area">
-        {/* ABA: FLASHCARDS */}
         {activeTab === "Flashcards" && (
           <div className="recursos-list-inner">
              <CardRecurso 
@@ -33,7 +31,6 @@ export default function ContainerRecursos({ nomeUnidade, onClose }) {
           </div>
         )}
         
-        {/* ABA: PLAYLISTS */}
         {activeTab === "Playlists" && (
           <div className="recursos-list-inner">
             <CardRecurso 
@@ -49,7 +46,6 @@ export default function ContainerRecursos({ nomeUnidade, onClose }) {
           </div>
         )}
         
-        {/* ABA: SLIDES */}
         {activeTab === "Slides" && (
           <div className="recursos-list-inner">
             <CardRecurso 
@@ -65,7 +61,6 @@ export default function ContainerRecursos({ nomeUnidade, onClose }) {
           </div>
         )}
 
-        {/* ABA: LIVROS */}
         {activeTab === "Livros" && (
           <div className="recursos-list-inner">
             <CardRecurso 

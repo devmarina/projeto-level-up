@@ -1,4 +1,3 @@
-// src/components/ProgressBar.jsx
 import "./ProgressBar.css";
 
 export default function ProgressBar({ porcentagem, cor = "#20adcd" }) {

@@ -1,5 +1,3 @@
-/* src/components/CardDisciplina.css */
-
 .disciplina-card {
   background: white;
   border: 1px solid #e0e0e0;
@@ -54,7 +52,7 @@
   font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 20px;
-  flex-grow: 1; /* Empurra o progresso para baixo */
+  flex-grow: 1;
 }
 
 .card-progress-info {

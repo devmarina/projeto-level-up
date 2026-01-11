@@ -1,5 +1,4 @@
-// src/pages/Conteudos.jsx
-import { useNavigate } from "react-router-dom"; // 1. IMPORTAÇÃO ADICIONADA
+import { useNavigate } from "react-router-dom";
 import CardDisciplina from "../components/CardDisciplina";
 import SearchInput from "../components/SearchInput";
 import "./Questionarios.css"; 
@@ -24,7 +23,7 @@ const disciplinas = [
 ];
 
 export default function Conteudos() {
-  const navigate = useNavigate(); // 2. HOOK DEFINIDO AQUI DENTRO
+  const navigate = useNavigate(); 
 
   return (
     <div className="questionarios-container">
@@ -50,7 +49,6 @@ export default function Conteudos() {
           <CardDisciplina 
             key={item.id} 
             {...item}
-            // 3. ONCLICK ATUALIZADO PARA NAVEGAR
             onClick={() => navigate("/conteudos/detalhes")} 
           />
         ))}

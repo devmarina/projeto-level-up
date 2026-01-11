@@ -1,7 +1,6 @@
-// src/pages/Cadastro.jsx
 import { Link } from "react-router-dom";
 import BannerLateral from "../components/BannerLateral";
-import "./Login.css"; // Reutilizamos o CSS de layout do Login
+import "./Login.css"; 
 
 export default function Cadastro() {
   return (

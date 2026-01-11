@@ -1,4 +1,3 @@
-// src/pages/ConteudoDisciplinaEspecifica.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";

@@ -1,4 +1,3 @@
-// src/components/CardUnidade.jsx
 import "./CardUnidade.css";
 
 export default function CardUnidade({ numero, nome, descricao, concluida, onAcao }) {

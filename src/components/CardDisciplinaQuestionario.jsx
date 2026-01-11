@@ -1,4 +1,3 @@
-// src/components/CardDisciplina.jsx
 import "./CardDisciplinaQuestionario.css";
 
 export default function CardDisciplinaQuestionario({ nome, descricao, onClick }) {

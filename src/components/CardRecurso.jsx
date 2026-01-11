@@ -1,4 +1,3 @@
-// src/components/CardRecurso.jsx
 import { useState } from "react";
 import "./CardRecurso.css";
 
@@ -6,7 +5,7 @@ export default function CardRecurso({ tipo, titulo, subtitulo, onClick }) {
   const [checado, setChecado] = useState(false);
 
   const handleCheck = (e) => {
-    e.stopPropagation(); // Impede que abra o recurso ao marcar como lido
+    e.stopPropagation();
     setChecado(!checado);
   };
 
@@ -15,7 +14,6 @@ export default function CardRecurso({ tipo, titulo, subtitulo, onClick }) {
       <div className="recurso-left">
         {tipo !== "flashcard" && (
           <div className={`recurso-icon-bg icon-${tipo}`}>
-            {/* Espaço reservado para o ícone SVG conforme o tipo */}
             <div className="icon-placeholder"></div>
           </div>
         )}

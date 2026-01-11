@@ -1,16 +1,14 @@
-// src/components/Header.jsx
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
   const navigate = useNavigate();
 
-  // Simulação do usuário que virá do banco de dados futuramente
   const user = { nome: "Gabriel" };
 
   const handleLogout = () => {
-    // Lógica para deslogar
-    navigate("/"); // Volta para a tela de login
+  
+    navigate("/");
   };
 
   return (
@@ -45,7 +43,6 @@ function Header() {
           <h1 className="user-name">{user.nome}</h1>
         </div>
 
-        {/* Ícone de sair (usaremos um símbolo de porta/saída simplificado) */}
         <button className="exit-button" onClick={handleLogout} title="Sair">
           <svg
             width="20"

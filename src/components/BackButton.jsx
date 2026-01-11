@@ -1,4 +1,3 @@
-// src/components/BackButton.jsx
 import "./BackButton.css";
 
 export default function BackButton({ text, onClick }) {

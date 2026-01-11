@@ -1,14 +1,13 @@
-/* src/components/BackButton.css */
 .back-button-component {
   display: flex;
   align-items: center;
   gap: 8px;
   background: none;
   border: none;
-  color: #6c1199; /* Roxo padrão do seu sistema */
+  color: #6c1199;
   cursor: pointer;
   padding: 0;
-  margin-bottom: 25px; /* Espaçamento padrão para o conteúdo abaixo */
+  margin-bottom: 25px;
   transition: opacity 0.2s;
 }
 

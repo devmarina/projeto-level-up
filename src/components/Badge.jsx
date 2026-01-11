@@ -1,4 +1,3 @@
-// src/components/Badge.jsx
 import './Badge.css';
 
 export default function Badge({ text, color = '#eee', variant = 'filled' }) {
