@@ -1,0 +1,222 @@
+:root {
+  --cor-fundo-frente: #ecfdf5; /* Verde bem claro */
+  --cor-borda-frente: #d1fae5;
+  --cor-texto-frente: #064e3b;
+  
+  --cor-fundo-verso: #faf5ff; /* Roxo bem claro */
+  --cor-borda-verso: #e9d5ff;
+  --cor-texto-verso: #581c87;
+
+  --cor-primaria: #7c3aed; /* Roxo do botão */
+  --cor-primaria-hover: #6d28d9;
+}
+
+/* Container Externo - Fundo branco com bordas */
+.flashcard-outer-container {
+  background-color: white;
+  border: 2px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+}
+
+/* Container Principal */
+.flashcard-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Área do Card (Cena 3D) --- */
+.card-scene {
+  width: 100%;
+  height: 320px;
+  perspective: 1000px; /* Dá a profundidade 3D */
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); /* Animação suave */
+  transform-style: preserve-3d;
+}
+
+/* Classe que ativa o flip */
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Estilos comuns para Frente e Verso */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde o verso quando virado */
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* --- FRENTE (Pergunta) --- */
+.card-front {
+  background-color: var(--cor-fundo-frente);
+  border: 2px solid var(--cor-borda-frente);
+  color: var(--cor-texto-frente);
+}
+
+.card-question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: auto 0; /* Centraliza verticalmente */
+  line-height: 1.4;
+}
+
+.card-hint {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+}
+
+/* --- VERSO (Resposta) --- */
+.card-back {
+  background-color: var(--cor-fundo-verso);
+  border: 2px solid var(--cor-borda-verso);
+  color: var(--cor-texto-verso);
+  transform: rotateY(180deg); /* Já começa virado ao contrário */
+}
+
+.card-answer-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.card-answer {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* --- Badges (Dificuldade/Label) --- */
+.badge {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge.facil { background-color: #d1fae5; color: #065f46; }
+.badge.medio { background-color: #fef08a; color: #854d0e; }
+.badge.dificil { background-color: #fecaca; color: #991b1b; }
+.badge.resposta-label { background-color: #e9d5ff; color: #6b21a8; }
+
+/* --- Botões de Avaliação (SRS) --- */
+.srs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-srs {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.btn-srs:hover { filter: brightness(0.95); }
+.btn-again { background-color: #fee2e2; color: #dc2626; }
+.btn-hard { background-color: #ffedd5; color: #ea580c; }
+.btn-good { background-color: #dbeafe; color: #2563eb; }
+.btn-easy { background-color: #d1fae5; color: #059669; }
+
+/* --- Controles de Navegação --- */
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-nav.prev {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+.btn-nav.prev:hover:not(:disabled) { background-color: #e2e8f0; }
+
+.btn-nav.next {
+  background-color: var(--cor-primaria);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3);
+}
+.btn-nav.next:hover:not(:disabled) { background-color: var(--cor-primaria-hover); }
+
+.btn-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Indicadores (Bolinhas) */
+.progress-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background-color: var(--cor-primaria);
+  width: 24px;
+  border-radius: 4px;
+}
+
+.card-counter {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
