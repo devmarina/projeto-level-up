@@ -10,6 +10,8 @@ import Questionarios from "./pages/Questionarios";
 import QuestionariosDisciplinaEspecifico from "./pages/QuestionariosDisciplinaEspecifico";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro"; 
+import QuestionarioAtivo from "./pages/QuestionarioAtivo";
+
 
 function AppContent() {
   const location = useLocation();
@@ -19,18 +21,27 @@ function AppContent() {
 
   return (
     <>
-      {!hideHeader && <Header />}
+      {" "}
+      {!hideHeader && <Header />}{" "}
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/conteudos" element={<Conteudos />} />
-        <Route path="/conteudos/detalhes" element={<ConteudoDisciplinaEspecifica />} />
-        <Route path="/flashcards" element={<Flashcards />} />
-        <Route path="/revisoes" element={<Revisoes />} />
-        <Route path="/questionarios" element={<Questionarios />} />
-        <Route path="/questionarios/detalhes" element={<QuestionariosDisciplinaEspecifico />} />
-      </Routes>
+        {" "}
+        <Route path="/" element={<Login />} />{" "}
+        <Route path="/cadastro" element={<Cadastro />} />{" "}
+        <Route path="/dashboard" element={<Dashboard />} />{" "}
+        <Route path="/conteudos" element={<Conteudos />} />{" "}
+        <Route
+          path="/conteudos/detalhes"
+          element={<ConteudoDisciplinaEspecifica />}
+        />{" "}
+        <Route path="/flashcards" element={<Flashcards />} />{" "}
+        <Route path="/revisoes" element={<Revisoes />} />{" "}
+        <Route path="/questionarios" element={<Questionarios />} />{" "}
+        <Route path="/questionario-ativo" element={<QuestionarioAtivo />} />
+        <Route
+          path="/questionarios/detalhes"
+          element={<QuestionariosDisciplinaEspecifico />}
+        />{" "}
+      </Routes>{" "}
     </>
   );
 }
