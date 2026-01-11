@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Flashcard from "../components/flashcard";
+import Flashcard from "../components/FlashcardViewer";
 import "./Revisoes.css";
 
 const revisoesData = [

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './flashcard.css';
+import './FlashcardViewer.css';
 
 const Flashcard = ({
   pergunta,
@@ -32,7 +32,8 @@ const Flashcard = ({
   };
 
   return (
-    <div className="flashcard-wrapper">
+    <div className="flashcard-outer-container">
+      <div className="flashcard-wrapper">
       
       {/* Área do Card com efeito 3D */}
       <div 
@@ -123,6 +124,7 @@ const Flashcard = ({
         Cartão {cartaoAtual} de {totalCartoes}
       </p>
 
+      </div>
     </div>
   );
 };

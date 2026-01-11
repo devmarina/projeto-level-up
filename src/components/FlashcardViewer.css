@@ -11,6 +11,15 @@
   --cor-primaria-hover: #6d28d9;
 }
 
+/* Container Externo - Fundo branco com bordas */
+.flashcard-outer-container {
+  background-color: white;
+  border: 2px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+}
+
 /* Container Principal */
 .flashcard-wrapper {
   display: flex;
@@ -19,8 +28,8 @@
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: 'Inter', sans-serif; /* Ou a fonte do seu projeto */
+  padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 /* --- Área do Card (Cena 3D) --- */
