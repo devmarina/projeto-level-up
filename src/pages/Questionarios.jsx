@@ -47,7 +47,7 @@ export default function Questionarios() {
             key={item.id} 
             nome={item.nome} 
             descricao={item.descricao}
-            onClick={() => navigate("/questionarios/detalhes")} 
+            onClick={() => console.log(`Clicou na disciplina ${item.id}`)} 
           />
         ))}
       </div>
