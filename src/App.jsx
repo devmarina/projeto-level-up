@@ -5,6 +5,7 @@ import Header from "./components/Header";
 // Importando as páginas
 import Dashboard from "./pages/Dashboard";
 import Conteudos from "./pages/Conteudos";
+import ConteudoDisciplinaEspecifica from "./pages/ConteudoDisciplinaEspecifica";
 import Flashcards from "./pages/Flashcards";
 import Revisoes from "./pages/Revisoes";
 import Questionarios from "./pages/Questionarios";
@@ -27,6 +28,7 @@ function AppContent() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/conteudos" element={<Conteudos />} />
+        <Route path="/conteudos/detalhes" element={<ConteudoDisciplinaEspecifica />} />
         <Route path="/flashcards" element={<Flashcards />} />
         <Route path="/revisoes" element={<Revisoes />} />
         <Route path="/questionarios" element={<Questionarios />} />

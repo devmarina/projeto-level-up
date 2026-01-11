@@ -1,0 +1,23 @@
+/* src/components/BackButton.css */
+.back-button-component {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #6c1199; /* Roxo padrão do seu sistema */
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 25px; /* Espaçamento padrão para o conteúdo abaixo */
+  transition: opacity 0.2s;
+}
+
+.back-button-component:hover {
+  opacity: 0.7;
+}
+
+.back-button-component p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}

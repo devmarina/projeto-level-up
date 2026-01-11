@@ -1,3 +1,5 @@
+// src/pages/Conteudos.jsx
+import { useNavigate } from "react-router-dom"; // 1. IMPORTAÇÃO ADICIONADA
 import CardDisciplina from "../components/CardDisciplina";
 import SearchInput from "../components/SearchInput";
 import "./Questionarios.css"; 
@@ -22,6 +24,8 @@ const disciplinas = [
 ];
 
 export default function Conteudos() {
+  const navigate = useNavigate(); // 2. HOOK DEFINIDO AQUI DENTRO
+
   return (
     <div className="questionarios-container">
       <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -46,7 +50,8 @@ export default function Conteudos() {
           <CardDisciplina 
             key={item.id} 
             {...item}
-            onClick={() => console.log(`Abrindo disciplina ${item.id}`)} 
+            // 3. ONCLICK ATUALIZADO PARA NAVEGAR
+            onClick={() => navigate("/conteudos/detalhes")} 
           />
         ))}
       </div>
