@@ -35,11 +35,11 @@ function AppContent() {
         <Route path="/flashcards" element={<Flashcards />} />{" "}
         <Route path="/revisoes" element={<Revisoes />} />{" "}
         <Route path="/questionarios" element={<Questionarios />} />{" "}
-        <Route path="/questionario-ativo" element={<QuestionarioAtivo />} />
         <Route
-          path="/questionarios/detalhes"
+          path="/questionarios/detalhes/:disciplinaId"
           element={<QuestionariosDisciplinaEspecifico />}
-        />{" "}
+        />
+        <Route path="/questionario-ativo/:id" element={<QuestionarioAtivo />} />{" "}
       </Routes>{" "}
     </>
   );

@@ -65,7 +65,7 @@ export default function QuestionariosDisciplinaEspecifico() {
             key={item.id}
             nome={item.titulo}
             descricao={item.descricao}
-            onClick={() => handleCardClick(item.id)}
+            onClick={() => navigate(`/questionario-ativo/${item.id}`)}
           />
         ))}
       </div>
