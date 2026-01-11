@@ -5,9 +5,11 @@ const cadastroController = require('./controlers/cadastroController')
 
 // Render login page
 route.get('/login', loginController.paginaDeLogin)
-
-// Create new user (login)
-route.post('/users', loginController.createUser)
+route.post('/login', loginController.autenticar)
+// rota compatível com o frontend (Login.jsx chama /autenticar)
+route.post('/autenticar', loginController.autenticar)
+// DEBUG: listar todos os usuários
+route.get('/debug/usuarios', loginController.listarTodosUsuarios)
 
 // Create new user (cadastro)
 route.post('/cadastro', cadastroController.createUser)
