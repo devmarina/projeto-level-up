@@ -5,9 +5,7 @@ const cadastroController = require('./controlers/cadastroController')
 
 // Render login page
 route.get('/login', loginController.paginaDeLogin)
-
-// Create new user (login)
-route.post('/users', loginController.createUser)
+route.post('/login', loginController.autenticar)
 
 // Create new user (cadastro)
 route.post('/cadastro', cadastroController.createUser)
