@@ -55,7 +55,6 @@
   border-radius: 16px;
   padding: 32px;
   display: flex;
-  flex-col-direction: column;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
