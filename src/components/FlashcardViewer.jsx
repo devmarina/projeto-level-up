@@ -129,4 +129,4 @@ const Flashcard = ({
   );
 };
 
-export default Flashcard;
+export default Flashcard; //juan juan, nao ta com 0 nome certo
