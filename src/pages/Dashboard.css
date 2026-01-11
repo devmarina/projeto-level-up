@@ -4,7 +4,6 @@
   margin: 0 auto;
 }
 
-/* 1. Boas-Vindas */
 .welcome-banner {
   background: linear-gradient(90deg, #6c1199 0%, #20adcd 100%);
   border-radius: 20px;
@@ -25,27 +24,26 @@
   font-weight: 700;
 }
 
-/* 2. Estatísticas */
 .dashboard-container .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px; /* Increased horizontal spacing between the two stat cards */
+  gap: 48px;
   margin-bottom: 40px;
-  max-width: 1200px; /* Allow cards to be wider */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .dashboard-container .stat-card {
   background-color: #ffffff;
-  padding: 32px 40px; /* slightly larger padding to appear bigger */
+  padding: 32px 40px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   gap: 24px;
   border: 1px solid #e5e7eb;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  min-height: 150px; /* taller to feel more prominent */
+  min-height: 150px;
 }
 
 .card-revisoes {
@@ -57,7 +55,6 @@
   background-color: #ffffff;
 }
 
-/* O círculo branco do ícone */
 .stat-icon-circle {
   width: 48px;
   height: 48px;
@@ -74,7 +71,6 @@
   background-color: #f8fafc;
 }
 
-/* Alinhamento do texto */
 .stat-info {
   display: flex;
   flex-direction: column;
@@ -105,7 +101,6 @@
   margin: 0;
 }
 
-/* 3. Revisão Rápida */
 .revisao-rapida-container {
   margin-bottom: 40px;
   background-color: white;
@@ -159,14 +154,12 @@
   border-radius: 12px;
 }
 
-/* Ajuste para o FlashcardViewer não ocupar a tela toda no Dashboard */
 .dash-flashcard-wrapper .flashcard-outer-container {
   border: none;
   background: transparent;
   padding: 0;
 }
 
-/* 4. Questionários */
 .questionarios-dash-section {
   background-color: white;
   border-radius: 16px;
@@ -206,6 +199,6 @@
   font-size: 1.1rem;
 }
 
-.m-0 { 
-  margin: 0; 
+.m-0 {
+  margin: 0;
 }

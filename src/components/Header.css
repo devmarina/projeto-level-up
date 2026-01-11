@@ -11,17 +11,11 @@
 .logo-text {
   font-weight: 800;
   font-size: 24px;
-  background: linear-gradient(
-    90deg,
-    #471cb4,
-    #5316a9,
-    #6c1199,
-    #a122e0
-  ); 
+  background: linear-gradient(90deg, #471cb4, #5316a9, #6c1199, #a122e0);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
-  color: transparent; 
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .nav-links ul {

@@ -6,15 +6,17 @@ const revisoesData = [
   {
     id: 1,
     pergunta: "O que é uma lista encadeada?",
-    resposta: "Uma lista encadeada é uma estrutura de dados linear onde cada elemento (nó) contém um valor e uma referência (link) para o próximo nó.",
+    resposta:
+      "Uma lista encadeada é uma estrutura de dados linear onde cada elemento (nó) contém um valor e uma referência (link) para o próximo nó.",
     dificuldade: "Fácil",
     disciplina: "Estrutura de Dados",
-    status: "para_revisar", // "para_revisar", "revisado"
+    status: "para_revisar",
   },
   {
     id: 2,
     pergunta: "Qual é a diferença entre pilha e fila?",
-    resposta: "Pilha usa LIFO (Last In, First Out) - último a entrar é o primeiro a sair. Fila usa FIFO (First In, First Out) - primeiro a entrar é o primeiro a sair.",
+    resposta:
+      "Pilha usa LIFO (Last In, First Out) - último a entrar é o primeiro a sair. Fila usa FIFO (First In, First Out) - primeiro a entrar é o primeiro a sair.",
     dificuldade: "Fácil",
     disciplina: "Estrutura de Dados",
     status: "para_revisar",
@@ -25,29 +27,28 @@ export default function Revisoes() {
   const [cartoes, setCartoes] = useState(revisoesData);
   const [cartaoAtual, setCartaoAtual] = useState(0);
 
-  const cartoesParaRevisar = cartoes.filter(c => c.status === "para_revisar");
-  const totalRevisado = cartoes.filter(c => c.status === "revisado").length;
+  const cartoesParaRevisar = cartoes.filter((c) => c.status === "para_revisar");
+  const totalRevisado = cartoes.filter((c) => c.status === "revisado").length;
   const totalCartoes = cartoes.length;
   const progresso = totalRevisado;
 
   const handleAvaliar = (nivel) => {
     if (cartaoAtual < cartoesParaRevisar.length) {
-      const cartaoIndex = cartoes.findIndex(c => c.id === cartoesParaRevisar[cartaoAtual].id);
-      
+      const cartaoIndex = cartoes.findIndex(
+        (c) => c.id === cartoesParaRevisar[cartaoAtual].id
+      );
+
       if (nivel === "good" || nivel === "easy") {
-        // Remove da revisão
         const novosCartoes = [...cartoes];
         novosCartoes[cartaoIndex].status = "revisado";
         setCartoes(novosCartoes);
-        
-        // Avança para o próximo
+
         if (cartaoAtual < cartoes.length - 1) {
           setCartaoAtual(cartaoAtual);
         } else {
           setCartaoAtual(0);
         }
       } else {
-        // Mantém para revisar e avança
         if (cartaoAtual < cartoes.length - 1) {
           setCartaoAtual(cartaoAtual + 1);
         } else {
@@ -71,7 +72,6 @@ export default function Revisoes() {
 
   return (
     <div className="revisoes-container">
-      {/* Header Section */}
       <div className="section-header">
         <div className="header-icon revisoes-icon">
           <svg
@@ -97,10 +97,8 @@ export default function Revisoes() {
         </div>
       </div>
 
-      {/* Estado com Flashcards */}
       {cartoesParaRevisar.length > 0 ? (
         <>
-          {/* Barra de Progresso */}
           <div className="progress-container">
             <div className="progress-header">
               <span className="progress-label">Progresso de revisões</span>
@@ -109,19 +107,18 @@ export default function Revisoes() {
               </span>
             </div>
             <div className="progress-bar-wrapper">
-              <div 
+              <div
                 className="progress-bar-fill"
                 style={{ width: `${(progresso / totalCartoes) * 100}%` }}
               ></div>
             </div>
           </div>
 
-          {/* Card Container */}
           <div className="card-container-revisoes">
             <div className="card-discipline-tag">
               {cartoesParaRevisar[cartaoAtual]?.disciplina}
             </div>
-            
+
             <Flashcard
               pergunta={cartoesParaRevisar[cartaoAtual]?.pergunta}
               resposta={cartoesParaRevisar[cartaoAtual]?.resposta}
@@ -135,7 +132,6 @@ export default function Revisoes() {
           </div>
         </>
       ) : (
-        /* Estado Vazio */
         <div className="empty-state">
           <h2 className="empty-state-title">
             Você tem {cartoesParaRevisar.length} cartões para revisar

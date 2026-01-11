@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import BannerLateral from "../components/BannerLateral";
-import "./Login.css"; 
+import "./Login.css";
 
 export default function Cadastro() {
   return (

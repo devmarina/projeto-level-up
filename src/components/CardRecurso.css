@@ -1,5 +1,5 @@
 .card-recurso-item {
-  background: #ededed; 
+  background: #ededed;
   border: 1px solid #dcdcdc;
   border-radius: 15px;
   padding: 22px 30px;
@@ -13,7 +13,7 @@
 .recurso-titulo {
   font-size: 18px;
   color: #222;
-  margin-bottom: 12px; 
+  margin-bottom: 12px;
   display: block;
 }
 

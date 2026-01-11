@@ -22,21 +22,35 @@ export default function CardRecurso({ tipo, titulo, subtitulo, onClick }) {
           <span className="recurso-subtitulo">{subtitulo}</span>
         </div>
       </div>
-      
+
       <div className="recurso-right">
         {tipo === "flashcard" ? (
-          <div 
+          <div
             className={`check-circle-clickable ${checado ? "is-checked" : ""}`}
             onClick={handleCheck}
           >
             {checado && (
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="4"
+              >
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             )}
           </div>
         ) : (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ccc" strokeWidth="2">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ccc"
+            strokeWidth="2"
+          >
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>

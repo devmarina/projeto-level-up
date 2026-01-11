@@ -47,7 +47,6 @@ export default function Flashcards() {
   const [disciplinaFiltro, setDisciplinaFiltro] = useState("Todas as disciplinas");
   const [avaliacoes, setAvaliacoes] = useState({});
 
-  // Contadores por dificuldade
   const contadores = {
     total: flashcardsData.length,
     faceis: flashcardsData.filter(c => c.dificuldade === "Fácil").length,
@@ -74,13 +73,11 @@ export default function Flashcards() {
       ...avaliacoes,
       [cartaoAtual]: nivel,
     });
-    // Opcionalmente, avança para o próximo
     handleProximo();
   };
 
   return (
     <div className="flashcards-container">
-      {/* Header Section */}
       <div className="section-header">
         <div className="header-icon">
           <svg
@@ -104,7 +101,6 @@ export default function Flashcards() {
         </div>
       </div>
 
-      {/* Filter Dropdown */}
       <div className="filter-section">
         <div className="filter-icon">
           <svg
@@ -133,7 +129,6 @@ export default function Flashcards() {
         </select>
       </div>
 
-      {/* Card Display and Navigation */}
       <div className="flashcard-content">
         <div className="flashcard-info">
           <span className="card-counter">
@@ -153,7 +148,6 @@ export default function Flashcards() {
         />
       </div>
 
-      {/* Statistics Section */}
       <div className="statistics-grid">
         <div className="stat-card">
           <div className="stat-number">{contadores.total}</div>
