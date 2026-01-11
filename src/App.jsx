@@ -1,8 +1,6 @@
-// src/App.jsx
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 
-// Importando as páginas
 import Dashboard from "./pages/Dashboard";
 import Conteudos from "./pages/Conteudos";
 import ConteudoDisciplinaEspecifica from "./pages/ConteudoDisciplinaEspecifica";
@@ -12,11 +10,9 @@ import Questionarios from "./pages/Questionarios";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro"; 
 
-// Componente de Layout interno
 function AppContent() {
   const location = useLocation();
   
-  // Verifica se a rota atual é Login ou Cadastro
   const publicRoutes = ["/", "/cadastro"];
   const hideHeader = publicRoutes.includes(location.pathname);
 
