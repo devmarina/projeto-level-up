@@ -1,0 +1,37 @@
+/* src/components/TabMenu.css */
+.tab-segmented-control {
+  display: flex;
+  background: #e9e9e9; /* Fundo cinza da barra conforme imagem */
+  padding: 4px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.tab-segment-item {
+  flex: 1; /* Faz cada aba ocupar o mesmo espaço (25% cada) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  color: #777;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.tab-segment-item.active {
+  background: white; /* Aba ativa fica branca */
+  color: #555;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tab-icon-inner {
+  display: flex;
+  align-items: center;
+}
