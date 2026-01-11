@@ -1,0 +1,77 @@
+.unidade-card {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+}
+
+.unidade-info-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.status-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: #6c1199;
+}
+
+.concluida .status-icon-circle {
+  background: #6c1199;
+  color: white;
+}
+
+.circle-empty {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+
+.unidade-numero {
+  font-size: 12px;
+  font-weight: 800;
+  color: #888;
+  margin-right: 10px;
+}
+
+.unidade-nome {
+  font-size: 18px;
+  color: #333;
+}
+
+.unidade-desc {
+  font-size: 14px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.btn-estudar {
+  background: #6c1199;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-revisar {
+  background: white;
+  color: #6c1199;
+  border: 1px solid #ddd;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}

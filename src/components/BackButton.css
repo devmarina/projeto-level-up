@@ -1,0 +1,22 @@
+.back-button-component {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #6c1199;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 25px;
+  transition: opacity 0.2s;
+}
+
+.back-button-component:hover {
+  opacity: 0.7;
+}
+
+.back-button-component p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}

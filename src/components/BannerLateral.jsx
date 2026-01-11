@@ -1,4 +1,3 @@
-// src/components/BannerLateral.jsx
 import "./BannerLateral.css";
 
 export default function BannerLateral() {
