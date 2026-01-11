@@ -1,0 +1,211 @@
+.dashboard-container {
+  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 1. Boas-Vindas */
+.welcome-banner {
+  background: linear-gradient(90deg, #6c1199 0%, #20adcd 100%);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.welcome-banner p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  opacity: 0.95;
+}
+
+.welcome-banner h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* 2. Estatísticas */
+.dashboard-container .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px; /* Increased horizontal spacing between the two stat cards */
+  margin-bottom: 40px;
+  max-width: 1200px; /* Allow cards to be wider */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard-container .stat-card {
+  background-color: #ffffff;
+  padding: 32px 40px; /* slightly larger padding to appear bigger */
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  min-height: 150px; /* taller to feel more prominent */
+}
+
+.card-revisoes {
+  background-color: #d1f4f7;
+  border-color: #b8ecf3;
+}
+
+.card-progresso {
+  background-color: #ffffff;
+}
+
+/* O círculo branco do ícone */
+.stat-icon-circle {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon-circle.gray-bg {
+  background-color: #f8fafc;
+}
+
+/* Alinhamento do texto */
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  flex-grow: 1;
+  gap: 2px;
+}
+
+.stat-title {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 4px 0;
+  line-height: 1;
+}
+
+.stat-subtitle {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* 3. Revisão Rápida */
+.revisao-rapida-container {
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.section-header-dash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-with-icon h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.icon-box-cyan {
+  background: #e0f7f9;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box-purple {
+  background: #f3e8ff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-flashcard-wrapper {
+  background-color: #e0f7f9;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Ajuste para o FlashcardViewer não ocupar a tela toda no Dashboard */
+.dash-flashcard-wrapper .flashcard-outer-container {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+/* 4. Questionários */
+.questionarios-dash-section {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.subtitle-small {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.questionarios-grid-dash {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ver-todos-link {
+  text-decoration: none;
+  color: #6c1199;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.ver-todos-link:hover {
+  opacity: 0.8;
+}
+
+.arrow {
+  font-size: 1.1rem;
+}
+
+.m-0 { 
+  margin: 0; 
+}
