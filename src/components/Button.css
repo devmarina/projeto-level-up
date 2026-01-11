@@ -1,0 +1,133 @@
+/* Base Button Styles */
+.btn {
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  outline: none;
+  position: relative;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Size Variants */
+.btn-small {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}
+
+.btn-medium {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+}
+
+.btn-large {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+/* Color Variants */
+
+/* Primary (Roxo) */
+.btn-primary {
+  background-color: #7c3aed;
+  color: white;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #6d28d9;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: #5b21b6;
+}
+
+/* Secondary (Branco com borda) */
+.btn-secondary {
+  background-color: white;
+  color: #333;
+  border: 2px solid #e0e0e0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: #efefef;
+}
+
+/* Danger (Vermelho) */
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+.btn-danger:active:not(:disabled) {
+  background-color: #991b1b;
+}
+
+/* Success (Verde) */
+.btn-success {
+  background-color: #16a34a;
+  color: white;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #15803d;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+}
+
+.btn-success:active:not(:disabled) {
+  background-color: #166534;
+}
+
+/* Warning (Amarelo/Laranja) */
+.btn-warning {
+  background-color: #f97316;
+  color: white;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
+}
+
+.btn-warning:hover:not(:disabled) {
+  background-color: #ea580c;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+.btn-warning:active:not(:disabled) {
+  background-color: #c2410c;
+}
+
+/* Focus State */
+.btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

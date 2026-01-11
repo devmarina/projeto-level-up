@@ -6,12 +6,24 @@
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   width: 300px;
+  transition: all 0.2s ease;
+}
+
+.search-container-component:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-container-component:focus-within {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
 .search-icon {
   color: #888;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .search-input-field {
@@ -21,4 +33,9 @@
   width: 100%;
   font-size: 14px;
   color: #333;
+  font-family: inherit;
+}
+
+.search-input-field::placeholder {
+  color: #999;
 }
