@@ -7,6 +7,7 @@ import ConteudoDisciplinaEspecifica from "./pages/ConteudoDisciplinaEspecifica";
 import Flashcards from "./pages/Flashcards";
 import Revisoes from "./pages/Revisoes";
 import Questionarios from "./pages/Questionarios";
+import QuestionariosDisciplinaEspecifico from "./pages/QuestionariosDisciplinaEspecifico";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro"; 
 
@@ -28,6 +29,7 @@ function AppContent() {
         <Route path="/flashcards" element={<Flashcards />} />
         <Route path="/revisoes" element={<Revisoes />} />
         <Route path="/questionarios" element={<Questionarios />} />
+        <Route path="/questionarios/detalhes" element={<QuestionariosDisciplinaEspecifico />} />
       </Routes>
     </>
   );

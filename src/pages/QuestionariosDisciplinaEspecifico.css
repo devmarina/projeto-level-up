@@ -1,0 +1,50 @@
+/* src/pages/QuestionariosDisciplina.css */
+
+.questionario-disciplina-container {
+  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ajuste para o botão de voltar não ficar colado */
+.questionario-disciplina-container .back-button-component {
+  margin-bottom: 30px;
+}
+
+/* Cabeçalho da Disciplina */
+.disciplina-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+/* Reutilizando o estilo do box de ícone */
+.header-icon-box {
+  background-color: #e0d4fc;
+  color: #6c1199;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disciplina-info h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.disciplina-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Grid de cards (igual ao da tela anterior) */
+.conteudos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
