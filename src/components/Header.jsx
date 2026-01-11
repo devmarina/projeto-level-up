@@ -7,7 +7,6 @@ function Header() {
   const user = { nome: "Gabriel" };
 
   const handleLogout = () => {
-  
     navigate("/");
   };
 

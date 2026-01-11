@@ -9,13 +9,12 @@ import Revisoes from "./pages/Revisoes";
 import Questionarios from "./pages/Questionarios";
 import QuestionariosDisciplinaEspecifico from "./pages/QuestionariosDisciplinaEspecifico";
 import Login from "./pages/Login";
-import Cadastro from "./pages/Cadastro"; 
+import Cadastro from "./pages/Cadastro";
 import QuestionarioAtivo from "./pages/QuestionarioAtivo";
-
 
 function AppContent() {
   const location = useLocation();
-  
+
   const publicRoutes = ["/", "/cadastro"];
   const hideHeader = publicRoutes.includes(location.pathname);
 

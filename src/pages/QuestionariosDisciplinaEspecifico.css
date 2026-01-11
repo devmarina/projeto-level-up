@@ -1,17 +1,13 @@
-/* src/pages/QuestionariosDisciplina.css */
-
 .questionario-disciplina-container {
   padding: 40px 50px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Ajuste para o botão de voltar não ficar colado */
 .questionario-disciplina-container .back-button-component {
   margin-bottom: 30px;
 }
 
-/* Cabeçalho da Disciplina */
 .disciplina-header {
   display: flex;
   align-items: center;
@@ -19,7 +15,6 @@
   margin-bottom: 40px;
 }
 
-/* Reutilizando o estilo do box de ícone */
 .header-icon-box {
   background-color: #e0d4fc;
   color: #6c1199;
@@ -42,7 +37,6 @@
   font-size: 0.9rem;
 }
 
-/* Grid de cards (igual ao da tela anterior) */
 .conteudos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
