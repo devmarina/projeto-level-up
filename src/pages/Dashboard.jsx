@@ -18,18 +18,19 @@ export default function Dashboard() {
   useEffect(() => {
     const usuario = localStorage.getItem("usuario");
     if (usuario) {
-      const dados = JSON.parse(usuario);
-      setUsuarioLogado(dados);
-      // Atualiza userStats com o nome do usuário
-      setUserStats(prev => ({
-        ...prev,
-        nome: dados.username || "Usuário"
-      }));
-    } else {
-      // Se não houver usuário, redireciona para login
-      navigate("/login");
+      try {
+        const dados = JSON.parse(usuario);
+        setUsuarioLogado(dados);
+        // Atualiza userStats com o nome do usuário
+        setUserStats((prev) => ({
+          ...prev,
+          nome: dados.username || "Usuário",
+        }));
+      } catch (err) {
+        console.error("Erro ao ler 'usuario' do localStorage:", err);
+      }
     }
-  }, [navigate]);
+  }, []);
 
   const [revisaoRapida] = useState({
     pergunta: "O que é uma lista encadeada?",

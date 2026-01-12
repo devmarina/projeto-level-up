@@ -2,23 +2,27 @@ import { useNavigate } from "react-router-dom";
 import CardDisciplinaQuestionario from "../components/CardDisciplinaQuestionario";
 import "./Questionarios.css";
 
-const disciplinas = [
-  {
-    id: 1,
-    nome: "Disciplina 1",
-    descricao: "Teste seus conhecimentos sobre estruturas lineares básicas.",
-  },
-  {
-    id: 2,
-    nome: "Disciplina 2",
-    descricao: "Teste seus conhecimentos sobre estruturas lineares básicas.",
-  },
-  {
-    id: 3,
-    nome: "Disciplina 3",
-    descricao: "Teste seus conhecimentos sobre estruturas lineares básicas.",
-  },
+const sampleDisciplinas = [
+  "Algoritmos e Estruturas",
+  "Banco de Dados",
+  "Programação Orientada a Objetos",
+  "Redes de Computadores",
+  "Engenharia de Software",
 ];
+
+const sampleDescricoes = [
+  "Teste seus conhecimentos sobre estruturas lineares básicas.",
+  "Conceitos essenciais de modelagem relacional e SQL.",
+  "Padrões OO, encapsulamento e herança.",
+  "Protocolos, camadas e modelos de rede.",
+  "Boas práticas e ciclo de vida de software.",
+];
+
+const disciplinas = sampleDisciplinas.slice(0, 3).map((nome, i) => ({
+  id: i + 1,
+  nome,
+  descricao: sampleDescricoes[i % sampleDescricoes.length],
+}));
 
 export default function Questionarios() {
   const navigate = useNavigate();

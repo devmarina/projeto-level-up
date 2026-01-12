@@ -4,7 +4,12 @@ import "./Header.css";
 function Header() {
   const navigate = useNavigate();
   const usuario = localStorage.getItem("usuario");
-  const dados = JSON.parse(usuario);
+  let dados = {};
+  try {
+    dados = usuario ? JSON.parse(usuario) : {};
+  } catch (err) {
+    dados = {};
+  }
   const user = { nome: "Gabriel" };
 
   const handleLogout = () => {

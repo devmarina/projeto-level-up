@@ -12,6 +12,16 @@
   background: white;
 }
 
+.login-form-side h3 {
+  font-size: 2.2rem;
+  margin-bottom: 7px;
+  background: linear-gradient(90deg, #471cb4, #5316a9, #6c1199, #a122e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -39,7 +49,7 @@
 
 .footer-text {
   margin-top: 20px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .footer-text a {
   color: #6c1199;

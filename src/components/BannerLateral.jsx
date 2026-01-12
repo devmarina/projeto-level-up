@@ -1,10 +1,10 @@
 import "./BannerLateral.css";
+import { Gamepad } from 'lucide-react';
 
 export default function BannerLateral() {
   return (
     <div className="banner-roxo">
-      <div className="logo-box">
-        <div className="icon-raio">⚡</div>
+      <div className="logo-box"><Gamepad className="inline" size={60} />
       </div>
 
       <h1 className="title-levelup">LEVEL UP</h1>

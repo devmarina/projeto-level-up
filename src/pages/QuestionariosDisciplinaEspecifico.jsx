@@ -1,29 +1,39 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import CardDisciplinaQuestionario from "../components/CardDisciplinaQuestionario";
 import "./QuestionariosDisciplinaEspecifico.css";
 
-const conteudos = [
-  {
-    id: 101,
-    titulo: "Conteúdo 1",
-    descricao: "Teste seus conhecimentos sobre estruturas lineares básicas.",
-  },
-  {
-    id: 102,
-    titulo: "Conteúdo 2",
-    descricao: "Teste seus conhecimentos sobre estruturas lineares básicas.",
-  },
-  {
-    id: 103,
-    titulo: "Conteúdo 3",
-    descricao: "Teste seus conhecimentos sobre estruturas lineares básicas.",
-  },
+const sampleDisciplinas = [
+  "Algoritmos e Estruturas",
+  "Banco de Dados",
+  "Programação Orientada a Objetos",
+  "Redes de Computadores",
 ];
+
+const contentsByDisciplina = {
+  1: [
+    { id: 101, titulo: "Introdução a Listas Encadeadas", descricao: "Conceitos, operações básicas e complexidade." },
+    { id: 102, titulo: "Árvores e Grafos", descricao: "Representação, travessias e aplicações." },
+    { id: 103, titulo: "Algoritmos de Ordenação", descricao: "Comparação de complexidade e implementações." },
+  ],
+  2: [
+    { id: 201, titulo: "Modelagem Relacional", descricao: "Entidades, relacionamentos e normalização." },
+    { id: 202, titulo: "SQL Básico", descricao: "Consultas SELECT, filtros e joins." },
+    { id: 203, titulo: "Índices e Performance", descricao: "Como otimizar consultas com índices." },
+  ],
+  3: [
+    { id: 301, titulo: "Classes e Objetos", descricao: "Instância, construtores e encapsulamento." },
+    { id: 302, titulo: "Herança e Polimorfismo", descricao: "Reutilização e tipos derivados." },
+    { id: 303, titulo: "Design Patterns", descricao: "Padrões comuns e quando usar." },
+  ],
+};
 
 export default function QuestionariosDisciplinaEspecifico() {
   const navigate = useNavigate();
 
+  const { disciplinaId } = useParams();
+  const disciplinaIndex = Number(disciplinaId) - 1;
+  const conteudos = contentsByDisciplina[Number(disciplinaId)] || [];
   const handleCardClick = (id) => {
     console.log(`Clicou no conteúdo ${id}`);
   };
@@ -54,7 +64,12 @@ export default function QuestionariosDisciplinaEspecifico() {
           </svg>
         </div>
         <div className="disciplina-info">
-          <h2>Disciplina 1</h2>
+          <h2>
+            {(() => {
+              const idx = disciplinaIndex;
+              return sampleDisciplinas[idx] || `Disciplina ${disciplinaId}`;
+            })()}
+          </h2>
           <p>{conteudos.length} questionários disponíveis</p>
         </div>
       </div>

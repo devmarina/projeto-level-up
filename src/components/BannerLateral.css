@@ -13,10 +13,11 @@
 
 .icon-raio {
   font-size: 2rem;
-  background: #fff;
+  background: #7d42f4;
   color: #6c1199;
   padding: 10px;
   border-radius: 8px;
+  border: #f0eaff 1px solid;
 }
 
 .title-levelup {

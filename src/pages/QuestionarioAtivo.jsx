@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Badge from "../components/Badge";
 import ProgressBar from "../components/ProgressBar";
@@ -7,40 +7,86 @@ import ContainerQuestao from "../components/ContainerQuestao";
 import Button from "../components/Button";
 import "./QuestionarioAtivo.css";
 
-const quizData = {
-  disciplina: "Estrutura de Dados",
-  titulo: "Arrays e Listas",
-  questoes: [
-    {
-      id: 1,
-      pergunta:
-        "Qual a complexidade de inserção no final de um array dinâmico (amortizada)?",
-      alternativas: ["(O)1", "(O)n", "(O)log n", "(O)n²"],
-      respostaCorreta: 0,
-    },
-    {
-      id: 2,
-      pergunta: "Qual estrutura de dados utiliza o princípio LIFO?",
-      alternativas: ["Fila", "Pilha", "Árvore", "Grafo"],
-      respostaCorreta: 1,
-    },
-    {
-      id: 3,
-      pergunta: "O acesso a um elemento por índice em um Array é:",
-      alternativas: [
-        "Lento",
-        "Sequencial",
-        "Imediato (O)1",
-        "Depende do tamanho",
-      ],
-      respostaCorreta: 2,
-    },
-  ],
+const sampleDisciplinas = ["Algoritmos e Estruturas", "Banco de Dados", "Programação Orientada a Objetos", "Redes de Computadores"];
+
+const quizzesByContent = {
+  101: {
+    disciplina: sampleDisciplinas[0],
+    titulo: "Introdução a Listas Encadeadas",
+    questoes: [
+      { id: 1, pergunta: "Qual operação remove o primeiro elemento de uma lista encadeada?", alternativas: ["push","pop","shift","unshift"], respostaCorreta: 2 },
+      { id: 2, pergunta: "Qual a complexidade média para acessar o i-ésimo elemento numa lista encadeada?", alternativas: ["O(1)","O(log n)","O(n)","O(n log n)"], respostaCorreta: 2 },
+    ],
+  },
+  102: {
+    disciplina: sampleDisciplinas[0],
+    titulo: "Árvores e Grafos",
+    questoes: [
+      { id: 1, pergunta: "Qual travessia de árvore visita a raiz antes dos filhos?", alternativas: ["In-order","Pre-order","Post-order","Level-order"], respostaCorreta: 1 },
+      { id: 2, pergunta: "Um grafo sem ciclos é chamado de:", alternativas: ["Composto","Árvore","DAG","Cíclico"], respostaCorreta: 2 },
+    ],
+  },
+  103: {
+    disciplina: sampleDisciplinas[0],
+    titulo: "Algoritmos de Ordenação",
+    questoes: [
+      { id: 1, pergunta: "Qual algoritmo tem pior caso O(n^2)?", alternativas: ["Merge Sort","Quick Sort","Heap Sort","Bubble Sort"], respostaCorreta: 3 },
+    ],
+  },
+  201: {
+    disciplina: sampleDisciplinas[1],
+    titulo: "Modelagem Relacional",
+    questoes: [
+      { id: 1, pergunta: "O que é normalização?", alternativas: ["Otimizacao","Organizacao de tabelas","Indexacao","Backup"], respostaCorreta: 1 },
+    ],
+  },
+  202: {
+    disciplina: sampleDisciplinas[1],
+    titulo: "SQL Básico",
+    questoes: [
+      { id: 1, pergunta: "Qual comando recupera dados?", alternativas: ["INSERT","UPDATE","DELETE","SELECT"], respostaCorreta: 3 },
+    ],
+  },
+  203: {
+    disciplina: sampleDisciplinas[1],
+    titulo: "Índices e Performance",
+    questoes: [
+      { id: 1, pergunta: "Qual a principal função de um índice em banco de dados?", alternativas: ["Aumentar espaço em disco","Melhorar velocidade de consultas","Substituir backups","Garantir integridade referencial"], respostaCorreta: 1 },
+    ],
+  },
+  301: {
+    disciplina: sampleDisciplinas[2],
+    titulo: "Classes e Objetos",
+    questoes: [
+      { id: 1, pergunta: "Qual palavra-chave cria uma instância em JS?", alternativas: ["new","create","inst","make"], respostaCorreta: 0 },
+    ],
+  },
+  302: {
+    disciplina: sampleDisciplinas[2],
+    titulo: "Herança e Polimorfismo",
+    questoes: [
+      { id: 1, pergunta: "Herança permite:", alternativas: ["Reutilizar código","Aumentar o tamanho do binário","Garantir segurança","Evitar testes"], respostaCorreta: 0 },
+    ],
+  },
+  303: {
+    disciplina: sampleDisciplinas[2],
+    titulo: "Design Patterns",
+    questoes: [
+      { id: 1, pergunta: "Qual pattern garante uma única instância de uma classe?", alternativas: ["Factory","Observer","Singleton","Decorator"], respostaCorreta: 2 },
+    ],
+  },
 };
 
 export default function QuestionarioAtivo() {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const contentId = Number(id);
 
+  const quizData = quizzesByContent[contentId] || {
+    disciplina: "Questionários",
+    titulo: `Questionário ${contentId}`,
+    questoes: [],
+  };
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
