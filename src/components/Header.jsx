@@ -3,7 +3,8 @@ import "./Header.css";
 
 function Header() {
   const navigate = useNavigate();
-
+  const usuario = localStorage.getItem("usuario");
+  const dados = JSON.parse(usuario);
   const user = { nome: "Gabriel" };
 
   const handleLogout = () => {
@@ -39,7 +40,7 @@ function Header() {
       <div className="user-area">
         <div className="user-profile">
           <div className="user-avatar-circle"></div>
-          <h1 className="user-name">{user.nome}</h1>
+          <h1 className="user-name">{dados.username}</h1>
         </div>
 
         <button className="exit-button" onClick={handleLogout} title="Sair">

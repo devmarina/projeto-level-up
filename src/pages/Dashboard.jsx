@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FlashcardViewer from "../components/FlashcardViewer";
 import CardDisciplinaQuestionario from "../components/CardDisciplinaQuestionario";
@@ -6,13 +6,30 @@ import "./Dashboard.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-
-  const [userStats] = useState({
-    nome: "Gabriel",
+  const [usuarioLogado, setUsuarioLogado] = useState(null);
+  const [userStats, setUserStats] = useState({
+    nome: "Usuário",
     revisoesHoje: 2,
     disciplinasConcluidas: 3,
     totalDisciplinas: 3,
   });
+
+  // Recupera dados do usuário do localStorage ao carregar
+  useEffect(() => {
+    const usuario = localStorage.getItem("usuario");
+    if (usuario) {
+      const dados = JSON.parse(usuario);
+      setUsuarioLogado(dados);
+      // Atualiza userStats com o nome do usuário
+      setUserStats(prev => ({
+        ...prev,
+        nome: dados.username || "Usuário"
+      }));
+    } else {
+      // Se não houver usuário, redireciona para login
+      navigate("/login");
+    }
+  }, [navigate]);
 
   const [revisaoRapida] = useState({
     pergunta: "O que é uma lista encadeada?",
