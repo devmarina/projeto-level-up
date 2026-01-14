@@ -95,8 +95,32 @@ export default function QuestionarioAtivo() {
   const totalQuestions = quizData.questoes.length;
   const currentQuestion = quizData.questoes[currentQuestionIndex];
 
+  if (totalQuestions === 0) {
+    return (
+      <div className="questionario-ativo-page">
+        <div style={{ alignSelf: "flex-start" }}>
+          <BackButton
+            text="Voltar para questionários"
+            onClick={() => navigate("/questionarios")}
+          />
+        </div>
+
+        <div className="no-questions-card">
+          <h2>Nenhum questionário disponível</h2>
+          <p>Este conteúdo ainda não possui questões cadastradas.</p>
+          <div style={{ marginTop: 16 }}>
+            <Button variant="primary" onClick={() => navigate("/questionarios")}
+            >
+              Voltar para Questionários
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const progressPercentage =
-    ((currentQuestionIndex + 1) / totalQuestions) * 100;
+    totalQuestions > 0 ? ((currentQuestionIndex + 1) / totalQuestions) * 100 : 0;
 
   const handleConfirm = () => {
     if (selectedOption === currentQuestion.respostaCorreta) {

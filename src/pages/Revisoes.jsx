@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Flashcard from "../components/FlashcardViewer";
+import ProgressBar from "../components/ProgressBar";
 import "./Revisoes.css";
 
 const revisoesData = [
@@ -107,10 +108,12 @@ export default function Revisoes() {
               </span>
             </div>
             <div className="progress-bar-wrapper">
-              <div
-                className="progress-bar-fill"
-                style={{ width: `${(progresso / totalCartoes) * 100}%` }}
-              ></div>
+              <ProgressBar
+                porcentagem={
+                  totalCartoes > 0 ? Math.round((progresso / totalCartoes) * 100) : 0
+                }
+                cor="#7c3aed"
+              />
             </div>
           </div>
 

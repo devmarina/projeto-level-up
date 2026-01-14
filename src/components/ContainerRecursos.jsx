@@ -1,10 +1,57 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TabMenu from "./TabMenu";
 import CardRecurso from "./CardRecurso";
 import "./ContainerRecursos.css";
 
-export default function ContainerRecursos({ nomeUnidade, onClose }) {
+export default function ContainerRecursos({ nomeUnidade, onClose, onProgressUpdate }) {
   const [activeTab, setActiveTab] = useState("Flashcards");
+
+  // Example resources for the selected unit. In a real app, they'd come from props or an API.
+  const initialFlashcards = [
+    {
+      id: 1,
+      titulo: "O que é uma lista encadeada?",
+      subtitulo:
+        "Uma estrutura de dados linear onde cada elemento aponta para o próximo na sequência.",
+    },
+    {
+      id: 2,
+      titulo: "Diferença entre Array e Lista?",
+      subtitulo:
+        "Arrays possuem tamanho fixo na memória, enquanto listas encadeadas podem crescer dinamicamente.",
+    },
+  ];
+
+  const [flashcardsChecked, setFlashcardsChecked] = useState(() => {
+    const map = {};
+    initialFlashcards.forEach((f) => (map[f.id] = false));
+    return map;
+  });
+
+  useEffect(() => {
+    // notify initial progress
+    notifyProgress();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const toggleFlashcard = (id, value) => {
+    setFlashcardsChecked((prev) => {
+      const next = { ...prev, [id]: value };
+      // compute and notify
+      const total = Object.keys(next).length;
+      const checkedCount = Object.values(next).filter(Boolean).length;
+      const pct = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+      if (onProgressUpdate) onProgressUpdate(pct, nomeUnidade);
+      return next;
+    });
+  };
+
+  const notifyProgress = () => {
+    const total = Object.keys(flashcardsChecked).length;
+    const checkedCount = Object.values(flashcardsChecked).filter(Boolean).length;
+    const pct = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+    if (onProgressUpdate) onProgressUpdate(pct, nomeUnidade);
+  };
 
   return (
     <div className="container-recursos-fixed">
@@ -20,16 +67,16 @@ export default function ContainerRecursos({ nomeUnidade, onClose }) {
       <div className="recursos-scroll-area">
         {activeTab === "Flashcards" && (
           <div className="recursos-list-inner">
-            <CardRecurso
-              tipo="flashcard"
-              titulo="O que é uma lista encadeada?"
-              subtitulo="Uma estrutura de dados linear onde cada elemento aponta para o próximo na sequência."
-            />
-            <CardRecurso
-              tipo="flashcard"
-              titulo="Diferença entre Array e Lista?"
-              subtitulo="Arrays possuem tamanho fixo na memória, enquanto listas encadeadas podem crescer dinamicamente."
-            />
+            {initialFlashcards.map((f) => (
+              <CardRecurso
+                key={f.id}
+                tipo="flashcard"
+                titulo={f.titulo}
+                subtitulo={f.subtitulo}
+                checked={!!flashcardsChecked[f.id]}
+                onToggle={(val) => toggleFlashcard(f.id, val)}
+              />
+            ))}
           </div>
         )}
 

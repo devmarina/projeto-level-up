@@ -11,32 +11,52 @@ export default function ConteudoDisciplinaEspecifica() {
   const navigate = useNavigate();
   const [unidadeSelecionada, setUnidadeSelecionada] = useState(null);
 
-  const unidades = [
+  const [unidades, setUnidades] = useState([
     {
       numero: "01",
       nome: "Arrays e Listas",
       descricao: "Conceitos fundamentais de arrays e listas encadeadas...",
       concluida: true,
+      porcentagem: 100,
     },
     {
       numero: "02",
       nome: "Pilhas e Filas",
       descricao: "Estruturas LIFO e FIFO e suas aplicações...",
       concluida: true,
+      porcentagem: 100,
     },
     {
       numero: "03",
       nome: "Árvores Binárias",
       descricao: "Estruturas hierárquicas e algoritmos de busca...",
       concluida: false,
+      porcentagem: 0,
     },
     {
       numero: "04",
       nome: "Grafos",
       descricao: "Representação de conexões complexas e caminhos...",
       concluida: false,
+      porcentagem: 0,
     },
-  ];
+  ]);
+
+  const handleProgressUpdate = (pct, unidadeNome) => {
+    setUnidades((prev) =>
+      prev.map((u) =>
+        u.nome === unidadeNome
+          ? { ...u, porcentagem: pct, concluida: pct >= 100 }
+          : u
+      )
+    );
+  };
+
+  const totalUnidades = unidades.length;
+  const unidadesConcluidas = unidades.filter((u) => u.concluida).length;
+  const progressoPct = Math.round(
+    (unidadesConcluidas / Math.max(1, totalUnidades)) * 100
+  );
 
   return (
     <div className="especifica-container">
@@ -71,10 +91,10 @@ export default function ConteudoDisciplinaEspecifica() {
         </p>
 
         <div className="info-progress-stats">
-          <p>Progresso: 2/4 unidades</p>
-          <p className="pct-text">50%</p>
+          <p>Progresso: {unidadesConcluidas}/{totalUnidades} unidades</p>
+          <p className="pct-text">{progressoPct}%</p>
         </div>
-        <ProgressBar porcentagem={50} />
+        <ProgressBar porcentagem={progressoPct} />
       </section>
 
       <section className="unidades-white-box">
@@ -140,6 +160,7 @@ export default function ConteudoDisciplinaEspecifica() {
         <ContainerRecursos
           nomeUnidade={unidadeSelecionada}
           onClose={() => setUnidadeSelecionada(null)}
+          onProgressUpdate={handleProgressUpdate}
         />
       )}
     </div>

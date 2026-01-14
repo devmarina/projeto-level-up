@@ -1,12 +1,9 @@
-import { useState } from "react";
 import "./CardRecurso.css";
 
-export default function CardRecurso({ tipo, titulo, subtitulo, onClick }) {
-  const [checado, setChecado] = useState(false);
-
+export default function CardRecurso({ tipo, titulo, subtitulo, onClick, checked = false, onToggle }) {
   const handleCheck = (e) => {
     e.stopPropagation();
-    setChecado(!checado);
+    if (onToggle) onToggle(!checked);
   };
 
   return (
@@ -26,10 +23,12 @@ export default function CardRecurso({ tipo, titulo, subtitulo, onClick }) {
       <div className="recurso-right">
         {tipo === "flashcard" ? (
           <div
-            className={`check-circle-clickable ${checado ? "is-checked" : ""}`}
+            className={`check-circle-clickable ${checked ? "is-checked" : ""}`}
             onClick={handleCheck}
+            role="button"
+            aria-pressed={checked}
           >
-            {checado && (
+            {checked && (
               <svg
                 width="12"
                 height="12"

@@ -12,6 +12,7 @@ const Flashcard = ({
   onAnterior,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState(null);
 
   useEffect(() => {
     setIsFlipped(false);
@@ -24,9 +25,16 @@ const Flashcard = ({
     return "facil";
   };
 
-  const handleAvaliacao = (e, nivel) => {
+  const handleSelectLevel = (e, nivel) => {
     e.stopPropagation();
-    if (onAvaliar) onAvaliar(nivel);
+    setSelectedLevel(nivel);
+  };
+
+  const handleConfirmMark = (e) => {
+    e.stopPropagation();
+    if (!selectedLevel) return;
+    if (onAvaliar) onAvaliar(selectedLevel);
+    setSelectedLevel(null);
   };
 
   return (
@@ -68,28 +76,42 @@ const Flashcard = ({
 
               <div className="srs-grid">
                 <button
-                  className="btn-srs btn-again"
-                  onClick={(e) => handleAvaliacao(e, "again")}
+                  className={`btn-srs btn-again ${selectedLevel === 'again' ? 'selected' : ''}`}
+                  onClick={(e) => handleSelectLevel(e, "again")}
+                  aria-pressed={selectedLevel === 'again'}
                 >
                   Não lembrei
                 </button>
                 <button
-                  className="btn-srs btn-hard"
-                  onClick={(e) => handleAvaliacao(e, "hard")}
+                  className={`btn-srs btn-hard ${selectedLevel === 'hard' ? 'selected' : ''}`}
+                  onClick={(e) => handleSelectLevel(e, "hard")}
+                  aria-pressed={selectedLevel === 'hard'}
                 >
                   Difícil
                 </button>
                 <button
-                  className="btn-srs btn-good"
-                  onClick={(e) => handleAvaliacao(e, "good")}
+                  className={`btn-srs btn-good ${selectedLevel === 'good' ? 'selected' : ''}`}
+                  onClick={(e) => handleSelectLevel(e, "good")}
+                  aria-pressed={selectedLevel === 'good'}
                 >
                   Bom
                 </button>
                 <button
-                  className="btn-srs btn-easy"
-                  onClick={(e) => handleAvaliacao(e, "easy")}
+                  className={`btn-srs btn-easy ${selectedLevel === 'easy' ? 'selected' : ''}`}
+                  onClick={(e) => handleSelectLevel(e, "easy")}
+                  aria-pressed={selectedLevel === 'easy'}
                 >
                   Fácil
+                </button>
+              </div>
+
+              <div style={{ marginTop: 12 }}>
+                <button
+                  className="btn-srs btn-mark"
+                  onClick={handleConfirmMark}
+                  disabled={!selectedLevel}
+                >
+                  Marcar
                 </button>
               </div>
             </div>
