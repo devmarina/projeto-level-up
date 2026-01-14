@@ -6,7 +6,6 @@ import "./ContainerRecursos.css";
 export default function ContainerRecursos({ nomeUnidade, onClose, onProgressUpdate }) {
   const [activeTab, setActiveTab] = useState("Flashcards");
 
-  // Example resources for the selected unit. In a real app, they'd come from props or an API.
   const initialFlashcards = [
     {
       id: 1,
@@ -29,15 +28,12 @@ export default function ContainerRecursos({ nomeUnidade, onClose, onProgressUpda
   });
 
   useEffect(() => {
-    // notify initial progress
     notifyProgress();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleFlashcard = (id, value) => {
     setFlashcardsChecked((prev) => {
       const next = { ...prev, [id]: value };
-      // compute and notify
       const total = Object.keys(next).length;
       const checkedCount = Object.values(next).filter(Boolean).length;
       const pct = total > 0 ? Math.round((checkedCount / total) * 100) : 0;

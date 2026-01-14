@@ -22,7 +22,6 @@ export default function Login() {
 
       const data = await res.json();
 
-      // se status for 200 (OK) e tiver usuário, redireciona
       if (res.ok && data.usuario) {
         console.log('✅ Login bem-sucedido:', data);
         if (data.usuario) localStorage.setItem("usuario", JSON.stringify(data.usuario));

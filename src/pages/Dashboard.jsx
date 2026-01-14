@@ -14,14 +14,12 @@ export default function Dashboard() {
     totalDisciplinas: 3,
   });
 
-  // Recupera dados do usuário do localStorage ao carregar
   useEffect(() => {
     const usuario = localStorage.getItem("usuario");
     if (usuario) {
       try {
         const dados = JSON.parse(usuario);
         setUsuarioLogado(dados);
-        // Atualiza userStats com o nome do usuário
         setUserStats((prev) => ({
           ...prev,
           nome: dados.username || "Usuário",
@@ -56,7 +54,7 @@ export default function Dashboard() {
     <div className="dashboard-container">
       <section className="welcome-banner">
         <p>Olá,</p>
-        <h1>{userStats.nome}! 👋</h1>
+        <h1>{userStats.nome}!</h1>
       </section>
 
       <section className="stats-grid">

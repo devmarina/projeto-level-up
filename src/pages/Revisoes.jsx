@@ -29,8 +29,12 @@ export default function Revisoes() {
   const [cartaoAtual, setCartaoAtual] = useState(0);
 
   const cartoesParaRevisar = cartoes.filter((c) => c.status === "para_revisar");
-  const totalRevisado = cartoes.filter((c) => c.status === "revisado").length;
-  const totalCartoes = cartoes.length;
+  const [totalParaRevisarInicial] = useState(() =>
+    revisoesData.filter((c) => c.status === "para_revisar").length
+  );
+
+  const totalRevisado = totalParaRevisarInicial - cartoesParaRevisar.length;
+  const totalCartoes = totalParaRevisarInicial;
   const progresso = totalRevisado;
 
   const handleAvaliar = (nivel) => {
@@ -44,13 +48,13 @@ export default function Revisoes() {
         novosCartoes[cartaoIndex].status = "revisado";
         setCartoes(novosCartoes);
 
-        if (cartaoAtual < cartoes.length - 1) {
-          setCartaoAtual(cartaoAtual);
-        } else {
+        if (cartaoAtual >= cartoesParaRevisar.length - 1) {
           setCartaoAtual(0);
+        } else {
+          setCartaoAtual(cartaoAtual);
         }
       } else {
-        if (cartaoAtual < cartoes.length - 1) {
+        if (cartaoAtual < cartoesParaRevisar.length - 1) {
           setCartaoAtual(cartaoAtual + 1);
         } else {
           setCartaoAtual(0);
